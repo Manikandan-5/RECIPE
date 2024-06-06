@@ -1,38 +1,65 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?fammily=Poppins&display=swap');
+
+*
+{
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins','sans-serif';
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#navbar{
+  top: 0;
+  left: 0;
+  z-index: 100;
+  padding: .5rem 5rem;
+  box-shadow: 5px 5px 20px rgba(0,0,0,0.5);
+}
+.navbar-brand{
+  font-size: 25px;
+  font-weight: 800;
+  color: tomato !important;
+}
+#navbarSupportedContent a:hover{
+  color: tomato;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+section{
+  width: 100%;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#Home{
+  background: url('./Banner/banner3.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+#Home h1{
+  font-size: 50px;
+}
+
+#Home .input-group{
+  width: 40% ;
+  display: flex;
+  justify-content: center;
+}
+.input-group input{
+  width: 100%;
+  border: 2px solid rgb(27, 218, 27);
+  border-radius: 6px;
+  padding-left: 20px;
+}
+
+form {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+

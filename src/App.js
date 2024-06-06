@@ -1,24 +1,30 @@
-import logo from './logo.svg';
+
 import './App.css';
+import React, { useState } from 'react';
+import axios from 'axios';
+import { Home } from './pages/Home';
+import RecipeList from './components/RecipeList';
+import Search from './components/Search';
+import { Footer } from './components/Footer';
 
 function App() {
+  const [recipes, setRecipes] = useState([]);
+
+  const APP_ID = '3f94c30f';
+  const APP_KEY = '36956c287e5b701f5541f5ce0c00b253';
+  const getRecipes = async (query) => {
+    const result = await axios.get(
+        `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`
+    );
+    setRecipes(result.data.hits);
+};
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <>
+    <Home onSearch={getRecipes}/>
+    <Search/>
+     <RecipeList recipes={recipes} />
+     <Footer/>
+   </>
   );
 }
 
