@@ -21,7 +21,7 @@ export const Home = ({ onSearch }) => {
                 <input
                     className="form-control mb-2"
                     type="text"
-                    placeholder="Enter a recipe eg:(Egg,Chicken,Ice Cream)"
+                    placeholder="Enter a recipe "
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
                 />

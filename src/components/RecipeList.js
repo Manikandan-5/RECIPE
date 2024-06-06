@@ -4,7 +4,7 @@ import RecipeItem from "./RecipeItem";
 
 const RecipeList = ({ recipes }) => {
   if (!recipes || recipes.length === 0) {
-    return <p>No recipes found.</p>;
+    return <h5 className="text-center mt-4" style={{color:'tomato'}}>No recipes found.</h5>;
 }
 
   return (
